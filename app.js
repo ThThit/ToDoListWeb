@@ -4,7 +4,9 @@ const btnAdd = document.getElementById('btnAdd');
 const btnFinish = document.getElementById('btnFinish');
 const ulList = document.getElementById('taskList');
 
-const taskList = [];
+let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
+
+renderTasks();
 
 btnAdd.addEventListener('click', () => {
     if (inputTask.value === '') {
@@ -18,6 +20,11 @@ btnAdd.addEventListener('click', () => {
 
     taskList.push(newTask);
     console.log(taskList);
+
+    // save the lsit to the local 
+    localStorage.setItem(
+        'taskList', JSON.stringify(taskList)
+    );
 
     renderTasks();
 
@@ -43,5 +50,6 @@ function renderTasks() {
 
 function finishTask(index) {
     taskList.splice(index, 1);
+    localStorage.setItem('taskList', JSON.stringify(taskList));
     renderTasks();
 }
