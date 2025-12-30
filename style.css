@@ -83,13 +83,13 @@ button {
     text-align: center;
 }
 
-#btnDelete {
-    background-color: #ff4444;
+#btnFinish {
+    background-color: #44c7ff;
     color: white;
 }
 
-.btnDelete:hover {
-    background-color: #cc0000;
+.btnFinish:hover {
+    background-color: #0014cc;
 }
 
 
