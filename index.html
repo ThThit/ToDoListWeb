@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h3>Todo List</h3>
+        
+        <div class="input-row grid-row">
+            <input type="text" placeholder="Enter Task" id="taskInput" class="teaskIn">
+            <input type="date" name="" id="dateInput">
+            <button id="btnAdd">Add</button>
+        </div>
+
+        <div class="taskContainer">
+            <ul id="taskList">
+                <li>
+                    <span class="title">Buy Groceries</span>
+                    <span class="date">2025-12-12</span>
+                    <button id="btnDelete">Delete</button>
+                </li>
+                <li>
+                    <span class="title">Buy Groceries</span>
+                    <span class="date">2025-12-12</span>
+                    <button id="btnDelete">Delete</button>
+                </li>
+                <li>
+                    <span class="title">Buy Groceries</span>
+                    <span class="date">2025-12-12</span>
+                    <button id="btnDelete">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
