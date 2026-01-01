@@ -43,7 +43,7 @@ h3 {
 
 .grid-row, li {
     display: grid;
-    grid-template-columns: 1fr 140px 80px;
+    grid-template-columns: 1fr 130px 120px 80px;
     gap: 15px;
     align-items: center;
     margin-bottom: 10px;
@@ -67,6 +67,12 @@ li {
 }
 
 .date {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.time {
     color: #666;
     font-size: 14px;
     text-align: center;

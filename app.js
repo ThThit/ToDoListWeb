@@ -1,5 +1,6 @@
 const inputTask = document.getElementById('taskInput');
 const taskDate = document.getElementById('dateInput');
+const taskTime = document.getElementById('taskTime');
 const btnAdd = document.getElementById('btnAdd');
 const btnFinish = document.getElementById('btnFinish');
 const ulList = document.getElementById('taskList');
@@ -15,11 +16,14 @@ btnAdd.addEventListener('click', () => {
 
     const newTask = {
         title: inputTask.value,
-        date: taskDate.value
+        date: taskDate.value,
+        time: taskTime.value
     }
 
     taskList.push(newTask);
     console.log(taskList);
+
+    console.log(newTask);
 
     // save the lsit to the local 
     localStorage.setItem(
@@ -31,6 +35,7 @@ btnAdd.addEventListener('click', () => {
     // Clear inputs
     inputTask.value = '';
     taskDate.value = '';
+    taskTime.value = '';
 });
 
 function renderTasks() {
@@ -42,6 +47,7 @@ function renderTasks() {
         li.innerHTML = `
             <span class="title">${task.title}</span>
             <span class="date">${task.date}</span>
+            <span class="time">${task.time}</span>
             <button id="btnFinish" onClick="finishTask(${index})">Done</button>`;
         
         ulList.prepend(li);
