@@ -41,6 +41,7 @@ btnAdd.addEventListener('click', () => {
 function renderTasks() {
     ulList.innerHTML = '';
 
+    // loop through the tasklist with index and obj task
     taskList.forEach((task, index) => {
         const li = document.createElement('li');
 
@@ -50,10 +51,14 @@ function renderTasks() {
             <span class="time">${task.time}</span>
             <button id="btnFinish" onClick="finishTask(${index})">Done</button>`;
         
+        // prepend for load the most recent one at the top
         ulList.prepend(li);
     });
 }
 
+// remove 1 item at the index
+// save updated list
+// rerender the tasks. 
 function finishTask(index) {
     taskList.splice(index, 1);
     localStorage.setItem('taskList', JSON.stringify(taskList));
