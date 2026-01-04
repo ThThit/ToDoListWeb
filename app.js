@@ -4,6 +4,7 @@ const taskTime = document.getElementById('taskTime');
 const btnAdd = document.getElementById('btnAdd');
 const btnFinish = document.getElementById('btnFinish');
 const ulList = document.getElementById('taskList');
+const completeSound = document.getElementById('completeSound');
 
 let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
@@ -60,6 +61,14 @@ function renderTasks() {
 // save updated list
 // rerender the tasks. 
 function finishTask(index) {
+    completeSound.pause();
+    completeSound.currentTime = 0;
+    completeSound.volume = 1.0;
+
+    completeSound.play().catch(err => {
+        console.log("Audio play failed:", err);
+    });
+    
     taskList.splice(index, 1);
     localStorage.setItem('taskList', JSON.stringify(taskList));
     renderTasks();
